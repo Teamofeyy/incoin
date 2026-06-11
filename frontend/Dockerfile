@@ -7,6 +7,7 @@ RUN npm ci
 
 ARG REACT_APP_API_URL=/api
 ENV REACT_APP_API_URL=$REACT_APP_API_URL
+ENV NODE_OPTIONS=--max-old-space-size=4096
 
 COPY . .
 RUN npm run build
