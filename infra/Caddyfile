@@ -20,6 +20,18 @@
 		reverse_proxy backend:8000
 	}
 
+	handle /static/js/* {
+		reverse_proxy frontend:80
+	}
+
+	handle /static/css/* {
+		reverse_proxy frontend:80
+	}
+
+	handle /static/media/* {
+		reverse_proxy frontend:80
+	}
+
 	handle /static/* {
 		root * /srv/django
 		file_server
